@@ -1,0 +1,253 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 72px;
+  padding: 0 66px;
+  box-shadow: none;
+  z-index: 1000;
+  box-sizing: border-box;
+  background: transparent;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  
+  &.header-scrolled {
+    padding: 0 66px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 100%);
+    backdrop-filter: blur(20px);
+    
+    .header-nav {
+      .header-logo {
+        .logo-image {
+          width: 26px;
+          height: 26px;
+        }
+        
+        .logo-text {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    height: 100%;
+    width: 100%;
+    
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      
+      .logo-image {
+        width: 30px;
+        height: 30px;
+        transition: all 0.3s ease;
+      }
+      
+      .logo-text {
+        font-size: 16px;
+        font-weight: 700;
+        color: #1a1a1a;
+        transition: all 0.3s ease;
+      }
+    }
+    
+    .header-menu {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      
+      .nav-link {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #656C86;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 8px 0;
+        
+        &:hover {
+          color: #000000;
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(135deg, #A758FF 0%, #6D91FF 50%, #12EDFE 100%);
+          transition: width 0.3s ease;
+        }
+        
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// 移动端适配
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 40px;
+    
+    &.header-scrolled {
+      padding: 0 40px;
+    }
+    
+    .header-nav {
+      padding: 0 16px;
+      
+      .header-menu {
+        gap: 24px;
+        
+        .nav-link {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: 50px;
+    
+    &.header-scrolled {
+      padding: 0 20px;
+    }
+    
+    .header-nav {
+      padding: 0 12px;
+      
+      .header-logo {
+        .logo-image {
+          width: 26px;
+          height: 26px;
+        }
+        
+        .logo-text {
+          font-size: 16px;
+        }
+      }
+      
+      .header-menu {
+        display: none; // 移动端隐藏导航菜单
+      }
+    }
+    
+    &.header-scrolled {
+      .header-nav {
+        .header-logo {
+          .logo-image {
+            width: 22px;
+            height: 22px;
+          }
+          
+          .logo-text {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 16px;
+    
+    &.header-scrolled {
+      padding: 0 16px;
+    }
+    
+    .header-nav {
+      padding: 0 8px;
+      
+      .header-logo {
+        gap: 8px;
+        
+        .logo-image {
+          width: 24px;
+          height: 24px;
+        }
+        
+        .logo-text {
+          font-size: 16px;
+        }
+      }
+    }
+    
+    &.header-scrolled {
+      .header-nav {
+        .header-logo {
+          .logo-image {
+            width: 20px;
+            height: 20px;
+          }
+          
+          .logo-text {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .header {
+    padding: 0 12px;
+    
+    &.header-scrolled {
+      padding: 0 12px;
+    }
+    
+    .header-nav {
+      padding: 0 6px;
+      
+      .header-logo {
+        gap: 6px;
+        
+        .logo-image {
+          width: 22px;
+          height: 22px;
+        }
+        
+        .logo-text {
+          font-size: 16px;
+        }
+      }
+    }
+    
+    &.header-scrolled {
+      .header-nav {
+        .header-logo {
+          .logo-image {
+            width: 18px;
+            height: 18px;
+          }
+          
+          .logo-text {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

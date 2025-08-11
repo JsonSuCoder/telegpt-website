@@ -1,0 +1,56 @@
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { copyFileSync, mkdirSync, existsSync } from 'fs'
+import { resolve, dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    {
+      name: 'copy-package',
+      writeBundle() {
+        // 确保dist目录存在
+        const distDir = resolve(__dirname, 'dist');
+        const packageSrcDir = resolve(__dirname, 'package');
+        const packageDistDir = resolve(distDir, 'package');
+        
+        // 创建目标目录
+        if (!existsSync(packageDistDir)) {
+          mkdirSync(packageDistDir, { recursive: true });
+        }
+        
+        // 复制安装包文件
+        try {
+          copyFileSync(resolve(packageSrcDir, 'Telegpt-x64.exe'), resolve(packageDistDir, 'Telegpt-x64.exe'));
+          copyFileSync(resolve(packageSrcDir, 'Telegpt-arm64.dmg'), resolve(packageDistDir, 'Telegpt-arm64.dmg'));
+          copyFileSync(resolve(packageSrcDir, 'Telegpt-x64.dmg'), resolve(packageDistDir, 'Telegpt-x64.dmg'));
+          console.log('Package files copied to dist successfully!');
+        } catch (error) {
+          console.error('Error copying package files:', error);
+        }
+      }
+    }
+  ],
+  // 配置静态资源处理
+  assetsInclude: ['**/*.dmg', '**/*.exe'],
+  build: {
+    // 确保大文件也能被正确处理
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        // 保持文件名不变
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && (assetInfo.name.endsWith('.dmg') || assetInfo.name.endsWith('.exe'))) {
+            return 'src/package/[name][extname]';
+          }
+          return 'assets/[name]-[hash][extname]';
+        }
+      }
+    }
+  }
+})

@@ -1,0 +1,270 @@
+.app-feature-container {
+  padding: 80px 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #ffffff;
+  
+  .feature-header {
+    text-align: center;
+    margin-bottom: 80px;
+    
+    .feature-main-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 1.76;
+      letter-spacing: 1.09%;
+      color: #0D0F2C;
+      margin: 0 0 20px 0;
+    }
+    
+    .feature-subtitle {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 1.76;
+      letter-spacing: 1.09%;
+      color: #0D0F2C;
+      margin: 0;
+    }
+  }
+  
+  .feature-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: start;
+    
+    .feature-card {
+      background: #F8FAFF;
+      border: 1.2px solid #E3EBFF;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: 434px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(109, 145, 255, 0.05) 0%, rgba(167, 88, 255, 0.05) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+      
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(109, 145, 255, 0.15);
+        border-color: rgba(109, 145, 255, 0.3);
+        
+        &::before {
+          opacity: 1;
+        }
+        
+        .feature-icon {
+          transform: scale(1.1);
+        }
+      }
+      
+      .card-icon {
+        width: 113px;
+        height: 113px;
+        margin: 0 auto 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .feature-icon {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+          transition: transform 0.3s ease;
+        }
+      }
+      
+      .card-title {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.08;
+        color: #000000;
+        margin: 0 0 20px 0;
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
+      }
+      
+      .card-description {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 22px;
+        color: #3D3838;
+        margin: 0;
+        text-align: left;
+        flex-grow: 1;
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+// 移动端适配
+@media (max-width: 1024px) {
+  .app-feature-container {
+    padding: 60px 16px;
+    
+    .feature-header {
+      margin-bottom: 60px;
+      
+      .feature-main-title,
+      .feature-subtitle {
+        font-size: 40px;
+      }
+    }
+    
+    .feature-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      
+      .feature-card {
+        height: auto;
+        min-height: 380px;
+        
+        .card-title {
+          font-size: 28px;
+        }
+        
+        .card-description {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .app-feature-container {
+    padding: 32px 20px;
+    
+    .feature-header {
+      margin-bottom: 36px;
+      
+      .feature-main-title,
+      .feature-subtitle {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 12px;
+      }
+    }
+    
+    .feature-cards-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      
+      .feature-card {
+        padding: 24px 20px;
+        min-height: 320px;
+        
+        .card-icon {
+          width: 70px;
+          height: 70px;
+          margin-bottom: 20px;
+          
+          .feature-icon {
+            border-radius: 6px;
+          }
+        }
+        
+        .card-title {
+          font-size: 22px;
+          margin-bottom: 16px;
+        }
+        
+        .card-description {
+          font-size: 15px;
+          line-height: 1.5;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-feature-container {
+    padding: 32px 12px;
+    
+    .feature-header {
+      margin-bottom: 32px;
+      
+      .feature-main-title,
+      .feature-subtitle {
+        font-size: 24px;
+        line-height: 1.3;
+      }
+    }
+    
+    .feature-cards-grid {
+      gap: 20px;
+      
+      .feature-card {
+        padding: 20px 16px;
+        border-radius: 12px;
+        min-height: 280px;
+        
+        .card-icon {
+          width: 60px;
+          height: 60px;
+          margin-bottom: 16px;
+        }
+        
+        .card-title {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        
+        .card-description {
+          font-size: 14px;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
+
+// 特殊样式优化
+@media (max-width: 360px) {
+  .app-feature-container {
+    .feature-header {
+      .feature-main-title,
+      .feature-subtitle {
+        font-size: 20px;
+      }
+    }
+    
+    .feature-cards-grid {
+      .feature-card {
+        .card-title {
+          font-size: 18px;
+        }
+        
+        .card-description {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

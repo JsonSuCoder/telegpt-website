@@ -1,0 +1,72 @@
+// HomePage 整体布局和间距优化
+.min-h-screen {
+  // 移动端组件间距优化
+  @media (max-width: 768px) {
+    section {
+      margin-bottom: 40px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // 特定组件间距调整
+    #home {
+      margin-bottom: 60px;
+    }
+    
+    #features {
+      margin-bottom: 50px;
+    }
+    
+    #faq {
+      margin-bottom: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section {
+      margin-bottom: 32px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // 更小屏幕的间距调整
+    #home {
+      margin-bottom: 48px;
+    }
+    
+    #features {
+      margin-bottom: 40px;
+    }
+    
+    #faq {
+      margin-bottom: 32px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    section {
+      margin-bottom: 24px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // 最小屏幕的间距调整
+    #home {
+      margin-bottom: 36px;
+    }
+    
+    #features {
+      margin-bottom: 32px;
+    }
+    
+    #faq {
+      margin-bottom: 24px;
+    }
+  }
+}

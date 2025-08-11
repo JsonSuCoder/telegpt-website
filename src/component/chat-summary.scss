@@ -1,0 +1,281 @@
+.chat-summary-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  
+  .chat-summary-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+  }
+  
+  .text-content {
+    flex: 1;
+    max-width: 500px;
+    
+    .title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      
+      @media (max-width: 768px) {
+        font-size: 36px;
+      }
+    }
+    
+    .description {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    
+    .summarize-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      .btn-icon {
+        width: 16px;
+        height: 16px;
+      }
+      
+      &:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }
+  
+  .chat-interface {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 500px;
+    
+    .chat-image {
+      position: absolute;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      
+      &:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+    }
+    
+    .main-chat-window {
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      .main-image {
+        width: 320px;
+        height: 240px;
+        object-fit: cover;
+        z-index: 1;
+        
+        &:hover {
+          transform: translateY(-10px) scale(1.03);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+      }
+    }
+    
+    .file-share-component {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      
+      .file-image {
+        width: 200px;
+        height: 120px;
+        object-fit: cover;
+        z-index: 2;
+        
+        &:hover {
+          transform: translateY(-8px) scale(1.05) rotate(2deg);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+    
+    .chat-bubbles {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      
+      .bubble-group {
+        position: absolute;
+        
+        &.left {
+          left: 20px;
+          bottom: 0;
+          
+          .bubble-image {
+            &:first-child {
+              width: 140px;
+              height: 80px;
+              margin-bottom: 12px;
+              z-index: 3;
+              
+              &:hover {
+                transform: translateY(-6px) scale(1.08) rotate(-1deg);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+              }
+            }
+            
+            &:last-child {
+              width: 160px;
+              height: 90px;
+              z-index: 4;
+              
+              &:hover {
+                transform: translateY(-8px) scale(1.06) rotate(1deg);
+                box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+              }
+            }
+          }
+        }
+        
+        &.right {
+          right: 40px;
+          bottom: 20px;
+          
+          .bubble-image {
+            &:first-child {
+              width: 120px;
+              height: 70px;
+              margin-bottom: 10px;
+              z-index: 5;
+              
+              &:hover {
+                transform: translateY(-7px) scale(1.1) rotate(2deg);
+                box-shadow: 0 16px 32px rgba(0, 0, 0, 0.19);
+              }
+            }
+            
+            &:last-child {
+              width: 150px;
+              height: 85px;
+              z-index: 6;
+              
+              &:hover {
+                transform: translateY(-9px) scale(1.07) rotate(-2deg);
+                box-shadow: 0 22px 45px rgba(0, 0, 0, 0.22);
+              }
+            }
+          }
+        }
+      }
+      
+      .bubble-image {
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+    
+    .chat-summary-content {
+      gap: 40px;
+    }
+    
+    .chat-interface {
+      height: 400px;
+      
+      .main-chat-window .main-image {
+        width: 280px;
+        height: 200px;
+      }
+      
+      .file-share-component .file-image {
+        width: 160px;
+        height: 100px;
+      }
+      
+      .chat-bubbles {
+        .bubble-group {
+          &.left .bubble-image {
+            &:first-child {
+              width: 120px;
+              height: 70px;
+            }
+            
+            &:last-child {
+              width: 140px;
+              height: 80px;
+            }
+          }
+          
+          &.right .bubble-image {
+            &:first-child {
+              width: 100px;
+              height: 60px;
+            }
+            
+            &:last-child {
+              width: 130px;
+              height: 75px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animation keyframes for enhanced hover effects
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+  }
+}
+
+// Add subtle floating animation to images
+.chat-interface .chat-image {
+  animation: float 6s ease-in-out infinite;
+  
+  &:nth-child(2n) {
+    animation-delay: -2s;
+  }
+  
+  &:nth-child(3n) {
+    animation-delay: -4s;
+  }
+}
