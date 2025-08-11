@@ -34,8 +34,8 @@ const AppDownload = () => {
     const handleDownloadWin = ()=>{
         // 下载Windows安装包
         const link = document.createElement('a');
-        link.href = '/package/Telegpt-x64.exe';
-        link.download = 'Telegpt-x64.exe';
+        link.href = '/package/TeleGPT-x64.exe';
+        link.download = 'TeleGPT-x64.exe';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -56,7 +56,7 @@ const AppDownload = () => {
         }
         
         // 根据芯片类型选择对应的安装包
-        const fileName = architecture === 'arm' ? 'Telegpt-arm64.dmg' : 'Telegpt-x64.dmg';
+        const fileName = architecture === 'arm' ? 'TeleGPT-arm64.dmg' : 'TeleGPT-x64.dmg';
         
         const link = document.createElement('a');
         link.href = `/package/${fileName}`;
