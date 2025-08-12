@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'copy-package',
+      name: 'copy-files',
       writeBundle() {
         // 确保dist目录存在
         const distDir = resolve(__dirname, 'dist');
@@ -33,6 +33,25 @@ export default defineConfig({
         } catch (error) {
           console.error('Error copying package files:', error);
         }
+        
+        // 复制SEO文件到根目录
+        const seoFiles = ['sitemap.xml', 'robots.txt'];
+        
+        seoFiles.forEach(file => {
+          const srcFile = resolve(__dirname, file);
+          const destFile = resolve(distDir, file);
+          
+          if (existsSync(srcFile)) {
+            try {
+              copyFileSync(srcFile, destFile);
+              console.log(`Copied ${file} to dist root`);
+            } catch (error) {
+              console.error(`Error copying ${file}:`, error);
+            }
+          }
+        });
+        
+        console.log('SEO files copied to dist root successfully!');
       }
     }
   ],

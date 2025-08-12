@@ -247,7 +247,7 @@
   transition: opacity 0.3s ease;
 }
 
-.download-button:hover .button-icon {
+.download-button:not(.mobile-only):hover .button-icon {
   opacity: 0;
 }
 
