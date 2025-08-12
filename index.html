@@ -1,13 +1,197 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeleGPT</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>TeleGPT - AI Assistant for Telegram | Chat Summary, Grammar Check & Translation</title>
+  <meta name="title" content="TeleGPT - AI Assistant for Telegram | Chat Summary, Grammar Check & Translation">
+  <meta name="description"
+    content="Transform your Telegram with AI. Get instant chat summaries, grammar checking, translation, meeting scheduling & contact management. Free to start.">
+  <meta name="keywords"
+    content="telegram ai assistant, telegram bot, chat summary, grammar checker, translation bot, meeting scheduler, ai telegram, telegram automation, telegram productivity, telegram ai bot">
+  <meta name="author" content="TeleGPT Team">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="bingbot" content="index, follow">
+  <link rel="canonical" href="https://telegpt.org/">
+  
+  <!-- Language and Geo Tags -->
+  <meta name="language" content="English">
+  <meta name="geo.region" content="US">
+  <meta name="geo.placename" content="United States">
+  
+  <!-- Theme and App Tags -->
+  <meta name="theme-color" content="#1a73e8">
+  <meta name="msapplication-TileColor" content="#1a73e8">
+  <meta name="application-name" content="TeleGPT">
+  <meta name="apple-mobile-web-app-title" content="TeleGPT">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://telegpt.org/">
+  <meta property="og:title" content="TeleGPT - AI Assistant for Telegram | Chat Summary, Grammar Check & Translation">
+  <meta property="og:description"
+    content="Transform your Telegram with AI. Get instant chat summaries, grammar checking, translation, meeting scheduling & contact management. Free to start.">
+  <meta property="og:image" content="https://telegpt.org/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TeleGPT AI Assistant Interface Screenshot">
+  <meta property="og:site_name" content="TeleGPT">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="article:author" content="TeleGPT Team">
+  <meta property="article:publisher" content="https://www.facebook.com/telegpt">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://telegpt.org/">
+  <meta name="twitter:title" content="TeleGPT - AI Assistant for Telegram">
+  <meta name="twitter:description"
+    content="Transform your Telegram with AI. Chat summaries, grammar check, translation & more. Free to start.">
+  <meta name="twitter:image" content="https://telegpt.org/images/twitter-card.jpg">
+  <meta name="twitter:image:alt" content="TeleGPT AI Assistant Interface">
+  <meta name="twitter:site" content="@telegpt">
+  <meta name="twitter:creator" content="@telegpt">
+  <meta name="twitter:app:name:iphone" content="TeleGPT">
+  <meta name="twitter:app:id:iphone" content="6748808892">
+  <meta name="twitter:app:name:googleplay" content="TeleGPT">
+  <meta name="twitter:app:id:googleplay" content="org.telegpt.app">
+
+  <!-- Add the schema markup script here -->
+
+  <!-- Favicon and Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/favicon.svg" color="#1a73e8">
+  
+  <!-- Security and Performance -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src 'self' https://www.youtube.com;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- Preconnect for Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="dns-prefetch" href="https://telegpt.org">
+  
+  <!-- Alternative Languages -->
+  <link rel="alternate" hreflang="en" href="https://telegpt.org/">
+  <link rel="alternate" hreflang="zh" href="https://telegpt.org/zh/">
+  <link rel="alternate" hreflang="es" href="https://telegpt.org/es/">
+  <link rel="alternate" hreflang="fr" href="https://telegpt.org/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://telegpt.org/">
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://telegpt.org/#software",
+      "name": "TeleGPT",
+      "description": "All-in-one AI assistant for Telegram with chat summary, grammar check, translation, meeting scheduler and contact management",
+      "url": "https://telegpt.org",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": ["Windows", "macOS", "Android", "iOS"],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": [
+        "AI-powered chat summarization",
+        "Grammar checking and correction",
+        "Multi-language translation",
+        "Meeting scheduling assistant",
+        "Contact profile management",
+        "Action item extraction"
+      ],
+      "softwareVersion": "1.0",
+      "softwareRequirements": "Telegram messenger",
+      "screenshot": [
+        "https://telegpt.org/screenshot1.png",
+        "https://telegpt.org/screenshot2.png"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://telegpt.org/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://telegpt.org/#organization",
+      "name": "TeleGPT",
+      "url": "https://telegpt.org",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://telegpt.org/favicon.svg"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://telegpt.org/#website",
+      "url": "https://telegpt.org",
+      "name": "TeleGPT",
+      "description": "AI-powered Telegram assistant for productivity",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://telegpt.org/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://telegpt.org/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What can AI do in personal bot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TeleGPT's AI can summarize long conversations, check grammar in multiple languages, translate messages in real-time, schedule meetings automatically, and manage your contact profiles efficiently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my conversation data secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, TeleGPT uses end-to-end encryption and doesn't store your personal messages. All processing happens securely and your privacy is our top priority."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I customize Telegram AI assistant features?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, TeleGPT allows you to customize which features are active, set your preferred languages, configure meeting scheduling preferences, and personalize the AI assistant to your needs."
+          }
+        }
+      ]
+    }
+  ]
+      }
+    </script>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

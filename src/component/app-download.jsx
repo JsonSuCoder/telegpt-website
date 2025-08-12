@@ -67,7 +67,8 @@ const AppDownload = () => {
     }
 
     const handleDownloadOS = async ()=>{
-        window.location.href = "https://apps.apple.com/us/app/telegpt/id6748808892?l=zh-Hans-CN";
+        // window.location.href = "https://apps.apple.com/us/app/telegpt/id6748808892?l=zh-Hans-CN";
+        window.alert("Coming soon...")
     }
 
     return (
