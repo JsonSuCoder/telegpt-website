@@ -2,33 +2,6 @@
   "name": "TeleGPT - AI Assistant for Telegram",
   "short_name": "TeleGPT",
   "description": "Transform your Telegram with AI. Get instant chat summaries, grammar checking, translation, meeting scheduling & contact management.",
-  "icons": [
-    {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
   "theme_color": "#1a73e8",
   "background_color": "#ffffff",
   "display": "standalone",
@@ -36,19 +9,5 @@
   "start_url": "/",
   "scope": "/",
   "lang": "en",
-  "categories": ["productivity", "utilities", "communication"],
-  "screenshots": [
-    {
-      "src": "/screenshot-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/screenshot-narrow.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow"
-    }
-  ]
+  "categories": ["productivity", "utilities", "communication"]
 }

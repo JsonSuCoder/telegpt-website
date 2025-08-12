@@ -1,10 +1,8 @@
 import { useEffect } from 'react';
 import { initGA, initScrollTracking, initTimeOnPageTracking, trackPerformance } from '../utils/analytics';
 import { 
-  preloadCriticalResources, 
   preconnectExternalDomains, 
   loadThirdPartyScripts,
-  registerServiceWorker,
   optimizeScrollPerformance,
   optimizeMemoryUsage,
   monitorWebVitals
@@ -25,34 +23,8 @@ const SEOTools = () => {
     // 初始化性能跟踪
     trackPerformance();
     
-    // 注册Service Worker
-    registerServiceWorker();
-    
     // 预连接外部域名
     preconnectExternalDomains();
-    
-    // 添加额外的预加载资源
-    const preloadAdditionalResources = () => {
-      // 预加载应用截图
-      const screenshotLink = document.createElement('link');
-      screenshotLink.rel = 'preload';
-      screenshotLink.href = '/images/app-screenshot.webp';
-      screenshotLink.as = 'image';
-      document.head.appendChild(screenshotLink);
-      
-      // 预加载功能图标
-      const iconLink = document.createElement('link');
-      iconLink.rel = 'preload';
-      iconLink.href = '/images/feature-icons.webp';
-      iconLink.as = 'image';
-      document.head.appendChild(iconLink);
-    };
-    
-    // 预加载关键资源
-    preloadCriticalResources();
-    
-    // 调用额外预加载函数
-    preloadAdditionalResources();
     
     // 加载第三方脚本
     loadThirdPartyScripts();

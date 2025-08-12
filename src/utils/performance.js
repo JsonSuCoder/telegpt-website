@@ -36,36 +36,6 @@ export const createImageObserver = () => {
   return imageObserver;
 };
 
-// 预加载关键资源
-export const preloadCriticalResources = () => {
-  const resources = [
-    {
-      href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-      as: 'style',
-      crossorigin: 'anonymous'
-    },
-    {
-      href: '/images/hero-bg.webp',
-      as: 'image'
-    },
-    {
-      href: '/images/app-icon.webp',
-      as: 'image'
-    }
-  ];
-
-  resources.forEach(resource => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.href = resource.href;
-    link.as = resource.as;
-    if (resource.crossorigin) {
-      link.crossOrigin = resource.crossorigin;
-    }
-    document.head.appendChild(link);
-  });
-};
-
 // 预连接到外部域名
 export const preconnectExternalDomains = () => {
   const domains = [
@@ -102,11 +72,8 @@ export const loadThirdPartyScripts = () => {
   // 在页面加载完成后加载非关键脚本
   window.addEventListener('load', () => {
     setTimeout(() => {
-      // 加载社交媒体脚本
-      loadScript('https://platform.twitter.com/widgets.js');
-      
       // 加载其他分析脚本
-      loadScript('https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX');
+      loadScript('https://www.googletagmanager.com/gtag/js?id=G-HNNEJHY1SZ');
     }, 2000);
   });
 };
@@ -165,21 +132,6 @@ export const optimizeCSSLoading = () => {
   setTimeout(() => {
     loadCSS('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
   }, 100);
-};
-
-// 实现Service Worker缓存策略
-export const registerServiceWorker = () => {
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('SW registered: ', registration);
-        })
-        .catch(registrationError => {
-          console.log('SW registration failed: ', registrationError);
-        });
-    });
-  }
 };
 
 // 优化滚动性能
@@ -320,11 +272,9 @@ export const monitorWebVitals = () => {
 
 export default {
   createImageObserver,
-  preloadCriticalResources,
   preconnectExternalDomains,
   loadThirdPartyScripts,
   optimizeCSSLoading,
-  registerServiceWorker,
   optimizeScrollPerformance,
   optimizeMemoryUsage,
   monitorWebVitals

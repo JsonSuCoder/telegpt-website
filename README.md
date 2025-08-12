@@ -24,7 +24,6 @@ If you are developing a production application, we recommend using TypeScript wi
 - 创建了 `seoChecker.js` - SEO效果检查和监控工具
 ### ⚡ 性能优化
 - 创建了 `performance.js` - 图片懒加载、资源预加载、Web Vitals监控
-- 创建了 `sw.js` - Service Worker缓存策略和离线支持
 - 更新了 `vite.config.js` - 打包优化配置
 ### 🧩 组件化SEO管理
 - 创建了 `SEOHead.jsx` - 动态SEO标签管理组件
