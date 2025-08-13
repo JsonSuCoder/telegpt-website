@@ -149,7 +149,7 @@ const EmailCollection = ({ onComplete }) => {
                   </div>
                 ) : (
                   <>
-                    <span>join the waitlist</span>
+                    <span>Join the waitlist</span>
                     <svg className="arrow-icon" viewBox="0 0 24 24" fill="none">
                       <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
@@ -160,7 +160,7 @@ const EmailCollection = ({ onComplete }) => {
 
             <div className="footer-section">
               <p className="privacy-text">
-                # {waitlistNumber} of waitlist
+                # {waitlistNumber}
               </p>
             </div>
           </div>

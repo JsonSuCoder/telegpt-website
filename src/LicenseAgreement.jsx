@@ -1,8 +1,9 @@
 import React from 'react';
+import './LicenseAgreement.scss';
 
 const LicenseAgreement = () => {
   return (
-    <div>
+    <div className="license-agreement">
       <header>
         <div>
           <h1>End-User License Agreement</h1>
