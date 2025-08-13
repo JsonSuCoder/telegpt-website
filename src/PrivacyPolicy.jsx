@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
               <ul>
                 <li><strong>Telegram User ID:</strong> This is the unique identifier we use to identify and serve you. We do not collect your Telegram phone number or contact list.</li>
                 <li><strong>AI function input:</strong> text messages you send to the robot, voice input (for voice call functions), and content that needs to be translated or summarized. These contents will be used as input for the processing of the AI model.</li>
-                <li><strong>Contact Information:</strong> When you choose to share your contact information with us, we only collect the necessary information (name and phone number) to provide the meeting invitation feature.</li>
+                <li><strong>Contact Information:</strong> When you use the meeting scheduling feature, we only collect participants' email addresses to send meeting invitations. We do not collect or store phone numbers or other contact information.</li>
                 <li><strong>Location Information:</strong> If you choose to share your location in a chat, that location data will be processed like other messages.</li>
                 <li><strong>Feedback information:</strong> Feedback voluntarily submitted, including questions, suggestions or error reports.</li>
               </ul>
