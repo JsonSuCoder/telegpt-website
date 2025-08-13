@@ -1,68 +1,83 @@
-import React from 'react';
+import React , {useState,useEffect} from 'react';
 
 import './home-page.scss';
-import Header from './component/header';
-import AppDownload from './component/app-download';
-import AppFunction from './component/app-function'; 
-// import ChatSummary from './component/chat-summary';
-import UserFeedback from './component/user-feedback';
-import AppFeature from './component/app-feature';
-import AppFaq from './component/app-faq';
-import Footer from './component/footer';
+import Header from './components/header';
+import AppDownload from './components/app-download';
+import AppFunction from './components/app-function'; 
+// import ChatSummary from './components/chat-summary';
+import UserFeedback from './components/user-feedback';
+import AppFeature from './components/app-feature';
+import AppFaq from './components/app-faq';
+import Footer from './components/footer';
 import SEOHead from './components/SEOHead';
 import SEOTools from './components/SEOTools';
+import EmailCollection from './components/EmailCollection';
+import { checkEmailCollected } from './utils/emailCollection';
+import { message } from './utils/message';
 
 const HomePage = () => {
-  return (
-    <div className="min-h-screen bg-white">
-      {/* SEO Head管理 */}
-      <SEOHead 
-        page="home"
-        structuredDataType="software"
-      />
-      {/* SEO工具和优化 */}
-      <SEOTools />
-      {/* Skip to main content for accessibility */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-blue-600 text-white p-2 z-50">
-        Skip to main content
-      </a>
-      
-      {/* Header */}
-      <Header />
-      
-      {/* Main content */}
-      <main id="main-content" role="main">
-        {/* Hero/Download section */}
-        <section id="home" aria-labelledby="hero-heading">
-          <div id="download">
-            <AppDownload />
-          </div>
-        </section>
+  const [showEmailCollection, setShowEmailCollection] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-        {/* Functions section */}
-        <section id="functions" aria-labelledby="functions-heading">
-          <AppFunction />
-        </section>
+  useEffect(() => {
+    // 检查是否需要显示邮箱收集页面
+    const checkEmailStatus = async () => {
+      try {
+        const hasCollected = checkEmailCollected();
         
-        {/* User Feedback section */}
-        <section id="testimonials" aria-labelledby="testimonials-heading">
-          <UserFeedback />
-        </section>
-        
-        {/* Features section */}
-        <section id="features" aria-labelledby="features-heading">
-          <AppFeature />
-        </section>
-        
-        {/* FAQ section */}
-        <section id="faq" aria-labelledby="faq-heading">
-          <AppFaq />
-        </section>
-      </main>
+        if (!hasCollected) {
+          setShowEmailCollection(true);
+        }
+      } catch (error) {
+        console.error('检查邮箱状态失败:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkEmailStatus();
+  }, []);
+
+  const handleEmailCollectionComplete = (email) => {
+    console.log('邮箱收集完成:', email);
+    setShowEmailCollection(false);
+    
+    // 可以在这里添加欢迎消息或其他逻辑
+    setTimeout(() => {
+      message.success(`Welcome ${email}! Thank you for your interest.`);
+    }, 500);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-spinner"></div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      {showEmailCollection && (
+        <EmailCollection onComplete={handleEmailCollectionComplete} />
+      )}
       
-      {/* Footer */}
-      <Footer />
-    </div>
+      {/* 原有的主页内容 */}
+      <SEOHead page="home" structuredDataType="software" />
+      <SEOTools />
+      
+      <div className="home-page">
+        <Header />
+        <main className="main-content">
+          <AppDownload />
+          <AppFunction />
+          <AppFeature />
+          <UserFeedback />
+          <AppFaq />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

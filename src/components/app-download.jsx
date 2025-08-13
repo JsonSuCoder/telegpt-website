@@ -6,6 +6,7 @@ import downloadIcon from '../assets/app-download/download.png';
 import appStoreIcon from '../assets/app-download/appstore.png';
 import macIcon from '../assets/app-download/mac.png';
 import appScreenImg from '../assets/app-download/app-main-screen.png';
+import { message } from '../utils/message';
 
  async function getMacArchUserAgentData() {
         if (navigator.userAgentData) {
@@ -68,7 +69,7 @@ const AppDownload = () => {
 
     const handleDownloadOS = async ()=>{
         // window.location.href = "https://apps.apple.com/us/app/telegpt/id6748808892?l=zh-Hans-CN";
-        window.alert("Coming soon...")
+        message.info("Coming soon...")
     }
 
     return (
