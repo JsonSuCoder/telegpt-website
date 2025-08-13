@@ -33,7 +33,7 @@ const Header = () => {
                     <a href="#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
                     <a href="#features" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('features'); }}>Features</a>
                     <a href="#faq" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}>FAQ</a>
-                    <a href="#download" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('download'); }}>Download</a>
+                    <a href="#download" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Download</a>
                 </div>
             </nav>
         </header>

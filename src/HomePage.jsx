@@ -1,9 +1,9 @@
-import React , {useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './home-page.scss';
 import Header from './components/header';
 import AppDownload from './components/app-download';
-import AppFunction from './components/app-function'; 
+import AppFunction from './components/app-function';
 // import ChatSummary from './components/chat-summary';
 import UserFeedback from './components/user-feedback';
 import AppFeature from './components/app-feature';
@@ -24,7 +24,7 @@ const HomePage = () => {
     const checkEmailStatus = async () => {
       try {
         const hasCollected = checkEmailCollected();
-        
+
         if (!hasCollected) {
           setShowEmailCollection(true);
         }
@@ -41,7 +41,7 @@ const HomePage = () => {
   const handleEmailCollectionComplete = (email) => {
     console.log('邮箱收集完成:', email);
     setShowEmailCollection(false);
-    
+
     // 可以在这里添加欢迎消息或其他逻辑
     setTimeout(() => {
       message.success(`Welcome ${email}! Thank you for your interest.`);
@@ -61,19 +61,29 @@ const HomePage = () => {
       {showEmailCollection && (
         <EmailCollection onComplete={handleEmailCollectionComplete} />
       )}
-      
+
       {/* 原有的主页内容 */}
       <SEOHead page="home" structuredDataType="software" />
       <SEOTools />
-      
+
       <div className="home-page">
         <Header />
         <main className="main-content">
-          <AppDownload />
-          <AppFunction />
-          <AppFeature />
-          <UserFeedback />
-          <AppFaq />
+          <section id="home" aria-labelledby="hero-heading">
+            <AppDownload />
+          </section>
+          <section id="functions" aria-labelledby="functions-heading">
+            <AppFunction />
+          </section>
+          <section id="testimonials" aria-labelledby="testimonials-heading">
+            <UserFeedback />
+          </section>
+          <section id="features" aria-labelledby="features-heading">
+            <AppFeature />
+          </section>
+          <section id="faq" aria-labelledby="faq-heading">
+            <AppFaq />
+          </section>
         </main>
         <Footer />
       </div>
