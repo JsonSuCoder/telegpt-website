@@ -1,26 +1,26 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './EmailCollection.scss';
-import { getDeviceId, markEmailCollected, validateEmail as validateEmailUtil, saveEmailToServer, saveEmailToLocal, getAllEmailData } from '../utils/emailCollection';
+import { getDeviceId, markEmailCollected, validateEmail as validateEmailUtil, saveEmailToServer, saveEmailToLocal } from '../utils/emailCollection';
 
 const EmailCollection = ({ onComplete }) => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-  const [waitlistNumber, setWaitlistNumber] = useState(126);
+  // const [waitlistNumber, setWaitlistNumber] = useState(126);
 
   // 获取邮箱总数
-  const fetchEmailCount = useCallback(async () => {
-    try {
-      const response = await getAllEmailData();
-      if (response.code === 0  && response.data) {
-        setWaitlistNumber(response.data.length + 126);
-      }
-    } catch (error) {
-      console.error('获取邮箱总数失败:', error);
-      // 使用默认值126
-    }
-  }, []);
+  // const fetchEmailCount = useCallback(async () => {
+  //   try {
+  //     const response = await getAllEmailData();
+  //     if (response.code === 0  && response.data) {
+  //       setWaitlistNumber(response.data.length + 126);
+  //     }
+  //   } catch (error) {
+  //     console.error('获取邮箱总数失败:', error);
+  //     // 使用默认值126
+  //   }
+  // }, []);
 
   useEffect(() => {
     // 添加入场动画
@@ -30,13 +30,13 @@ const EmailCollection = ({ onComplete }) => {
     document.body.style.overflow = 'hidden';
     
     // 调用获取邮箱总数函数
-    fetchEmailCount();
+    // fetchEmailCount();
     
     // 清理函数：组件卸载时恢复滚动
     return () => {
       document.body.style.overflow = 'auto';
     };
-  }, [fetchEmailCount]);
+  }, []);
 
 
 
@@ -129,7 +129,7 @@ const EmailCollection = ({ onComplete }) => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
+                    placeholder="Please enter your email address"
                     className={`email-input ${error ? 'error' : ''}`}
                     disabled={isLoading}
                   />
@@ -158,11 +158,11 @@ const EmailCollection = ({ onComplete }) => {
               </button>
             </form>
 
-            <div className="footer-section">
+            {/* <div className="footer-section">
               <p className="privacy-text">
                 # {waitlistNumber}
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
