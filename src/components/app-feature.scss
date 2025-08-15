@@ -9,22 +9,18 @@
     margin-bottom: 80px;
     
     .feature-main-title {
-      font-family: 'Inter', sans-serif;
       font-weight: 800;
-      font-size: 50px;
-      line-height: 1.76;
-      letter-spacing: 1.09%;
-      color: #0D0F2C;
-      margin: 0 0 20px 0;
+      font-size: 48px;
+      line-height: 1.5;
+      color: #000000;
+      margin: 0;
     }
     
     .feature-subtitle {
-      font-family: 'Inter', sans-serif;
       font-weight: 800;
-      font-size: 50px;
-      line-height: 1.76;
-      letter-spacing: 1.09%;
-      color: #0D0F2C;
+      font-size: 48px;
+      line-height: 1.5;
+      color: #000000;
       margin: 0;
     }
   }
@@ -94,10 +90,9 @@
       }
       
       .card-title {
-        font-family: 'Inter', sans-serif;
         font-weight: 600;
-        font-size: 32px;
-        line-height: 1.08;
+        font-size: 36px;
+        line-height: 1.5;
         color: #000000;
         margin: 0 0 20px 0;
         text-align: center;
@@ -106,11 +101,10 @@
       }
       
       .card-description {
-        font-family: 'Inter', sans-serif;
         font-weight: 400;
-        font-size: 17px;
-        line-height: 22px;
-        color: #3D3838;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #3d3838;
         margin: 0;
         text-align: left;
         flex-grow: 1;

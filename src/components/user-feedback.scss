@@ -8,10 +8,10 @@
     margin-bottom: 60px;
     
     .feedback-title {
-      font-size: 50px;
+      font-size: 48px;
       font-weight: 800;
-      color: #0D0F2C;
-      line-height: 1.2;
+      color: #000000;
+      line-height: 1.5;
       margin: 0;
     }
   }
@@ -82,17 +82,18 @@
         }
         
         .user-name {
-          font-size: 15px;
+          font-size: 18px;
           font-weight: 600;
-          color: #3D3838;
-          letter-spacing: 0.5px;
+          color: #000000;
+          letter-spacing: 0.35px;
         }
       }
       
       .feedback-text {
-        font-size: 17px;
-        line-height: 1.6;
-        color: #3D3838;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #3d3838;
         margin: 0;
         font-weight: 400;
         letter-spacing: 0.3px;

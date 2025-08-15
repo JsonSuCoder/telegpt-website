@@ -1,6 +1,6 @@
 import React from 'react';
 import './footer.scss';
-import telegptLogo from '../assets/footer/telegpt-logo.png';
+import telegptLogo from '../assets/ai-icon.png';
 import socialIcon1 from '../assets/footer/social-icon-1.png';
 import socialIcon2 from '../assets/footer/social-icon-2.png';
 import socialIcon3 from '../assets/footer/social-icon-3.png';
@@ -24,8 +24,8 @@ const Footer = () => {
                             <h3 className="section-title">About</h3>
                             <ul className="section-links">
                                 <li><a href="/privacy">Privacy Policy</a></li>
-                                <li><a href="#">Terms of use</a></li>
-                                <li><a href="#">Community</a></li>
+                                <li><a href="https://royal-seashore-f45.notion.site/End-User-License-Agreement-233ae0c0cd8580859fc6edddfbecc6d4?source=copy_link" target='_blank'>EULA</a></li>
+                                <li><a href="https://t.me/+96qZm_G8LtZmZmI1" target='_blank'>Community</a></li>
                             </ul>
                         </div>
 
@@ -33,7 +33,7 @@ const Footer = () => {
                         <div className="footer-section contacts-section">
                             <h3 className="section-title">Contacts</h3>
                             <ul className="section-links">
-                                <li><a href="mailto:Hi@teleGPT.org">Hi@teleGPT.org</a></li>
+                                <li><a href="mailto:Hi@telegpt.org">Hi@telegpt.org</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,15 +42,15 @@ const Footer = () => {
                 <div className="footer-divider"></div>
                 {/* 社交媒体和版权区域 */}
                 <div className="social-section">
-                    <p className="copyright">© 2025 Telegpt Limited. All rights reserved.</p>
+                    <p className="copyright">All Rights Reserved © 2025</p>
                     <div className="social-icons">
-                        <a href="#" className="social-link">
+                        <a href="https://x.com/TeleGPT_" className="social-link" target='_blank'>
                             <img src={socialIcon1} alt="Social Media 1" className="social-icon" />
                         </a>
-                        <a href="#" className="social-link">
+                        <a href="https://www.linkedin.com/company/sending-labs/" className="social-link" target='_blank'>
                             <img src={socialIcon2} alt="Social Media 2" className="social-icon" />
                         </a>
-                        <a href="#" className="social-link">
+                        <a href="https://t.me/+96qZm_G8LtZmZmI1" className="social-link" target='_blank'>
                             <img src={socialIcon3} alt="Social Media 3" className="social-icon" />
                         </a>
                     </div>
