@@ -157,12 +157,13 @@ const EmailCollection = ({ onComplete }) => {
                 )}
               </button>
             </form>
-
-            {/* <div className="footer-section">
-              <p className="privacy-text">
+                
+            <div className="footer-section">
+              <a className="privacy-text" href="/privacy">Privacy Policy</a>
+              {/* <p className="privacy-text">
                 # {waitlistNumber}
-              </p>
-            </div> */}
+              </p> */}
+            </div>
           </div>
         </div>
       </div>
