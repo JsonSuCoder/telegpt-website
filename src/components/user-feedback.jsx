@@ -52,7 +52,7 @@ const UserFeedback = () => {
     return (
         <div className="user-feedback-container">
             <div className="feedback-header">
-                <h2 className="feedback-title">They all chat smarter with Telegpt.</h2>
+                <h2 className="feedback-title">They all chat smarter with TeleGPT.</h2>
             </div>
             
             <div className="feedback-grid">

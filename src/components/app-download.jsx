@@ -7,6 +7,7 @@ import appStoreIcon from '../assets/app-download/appstore.png';
 import macIcon from '../assets/app-download/mac.png';
 import appScreenImg from '../assets/app-download/app-main-screen.png';
 import { message } from '../utils/message';
+import { getDeviceId } from '../utils/emailCollection';
 
  async function getMacArchUserAgentData() {
         if (navigator.userAgentData) {
@@ -22,6 +23,32 @@ import { message } from '../utils/message';
 
 const AppDownload = () => {
     const [isVisible, setIsVisible] = useState(false);
+    // 邮箱白名单
+    const emailWhiteList = [];
+
+    // 检查本地收集的邮箱是否在白名单内
+    const checkEmailInWhitelist = () => {
+        try {
+            const deviceId = getDeviceId();
+            const collectedEmail = localStorage.getItem(`collected_email_${deviceId}`);
+            
+            if (!collectedEmail) {
+                message.error('Please submit your email address first');
+                return false;
+            }
+            
+            if (!emailWhiteList.includes(collectedEmail)) {
+                message.error('Your email address is not on the download whitelist. Please contact the administrator');
+                return false;
+            }
+            
+            return true;
+        } catch (error) {
+            console.error('检查邮箱白名单失败:', error);
+            message.error('Verification failed. Please try again later');
+            return false;
+        }
+    };
 
     useEffect(() => {
         // 组件挂载后触发动画
@@ -33,6 +60,11 @@ const AppDownload = () => {
     }, []);
 
     const handleDownloadWin = ()=>{
+        // 检查邮箱白名单
+        if (!checkEmailInWhitelist()) {
+            return;
+        }
+        
         // 下载Windows安装包
         const link = document.createElement('a');
         link.href = '/package/TeleGPT-x64.exe';
@@ -40,9 +72,16 @@ const AppDownload = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        
+        message.success('Start downloading the Windows version');
     }
     
     const handleDownloadMac = async ()=>{
+        // 检查邮箱白名单
+        if (!checkEmailInWhitelist()) {
+            return;
+        }
+        
         // 检测Mac芯片类型
         let architecture = await getMacArchUserAgentData();
         
@@ -65,9 +104,16 @@ const AppDownload = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        
+        message.success(`Start downloading the MacOS version (${architecture})`);
     }
 
     const handleDownloadOS = async ()=>{
+        // 检查邮箱白名单
+        if (!checkEmailInWhitelist()) {
+            return;
+        }
+        
         // window.location.href = "https://apps.apple.com/us/app/telegpt/id6748808892?l=zh-Hans-CN";
         message.info("Coming soon...")
     }

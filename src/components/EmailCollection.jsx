@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './EmailCollection.scss';
 import { getDeviceId, markEmailCollected, validateEmail as validateEmailUtil, saveEmailToServer, saveEmailToLocal } from '../utils/emailCollection';
 
-const EmailCollection = ({ onComplete }) => {
+const EmailCollection = () => {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [isVisible, setIsVisible] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   // const [waitlistNumber, setWaitlistNumber] = useState(126);
 
   // 获取邮箱总数
@@ -45,12 +46,12 @@ const EmailCollection = ({ onComplete }) => {
     setError('');
 
     if (!email.trim()) {
-      setError('请输入邮箱地址');
+      setError('Please enter your email address');
       return;
     }
 
     if (!validateEmailUtil(email)) {
-      setError('请输入有效的邮箱地址');
+      setError('Please enter a valid email address');
       return;
     }
 
@@ -77,17 +78,13 @@ const EmailCollection = ({ onComplete }) => {
       // 标记该设备已收集过邮箱
       markEmailCollected(email.trim());
 
-      // 成功动画
-      setIsVisible(false);
-      setTimeout(() => {
-        // 恢复背景滚动
-        document.body.style.overflow = 'unset';
-        onComplete && onComplete(email);
-      }, 500);
+      // 显示成功状态，不隐藏卡片
+      setIsSuccess(true);
+      // 不调用 onComplete，防止用户进入主页
 
     } catch (err) {
       console.error('邮箱收集失败:', err);
-      setError('提交失败，请稍后重试');
+      setError('Submission failed. Please try again later');
     } finally {
       setIsLoading(false);
     }
@@ -122,41 +119,54 @@ const EmailCollection = ({ onComplete }) => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="email-form">
-              <div className="input-group">
-                <div className="input-wrapper">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Please enter your email address"
-                    className={`email-input ${error ? 'error' : ''}`}
-                    disabled={isLoading}
-                  />
+            {isSuccess ? (
+              <div className="success-message">
+                <div className="success-icon">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                  </svg>
                 </div>
-                {error && <span className="error-message">{error}</span>}
+                <h2>Join the waitinglist success</h2>
+                <p>Thank you for your interest! We'll notify you when TeleGPT is ready.</p>
               </div>
-
-              <button 
-                type="submit" 
-                className={`submit-button ${isLoading ? 'loading' : ''}`}
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <div className="loading-spinner">
-                    <div className="spinner"></div>
-                    <span>Submitting...</span>
+            ) : (
+              <form onSubmit={handleSubmit} className="email-form">
+                <div className="input-group">
+                  <div className="input-wrapper">
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Please enter your email address"
+                      className={`email-input ${error ? 'error' : ''}`}
+                      disabled={isLoading}
+                    />
                   </div>
-                ) : (
-                  <>
-                    <span>Join the waitlist</span>
-                    <svg className="arrow-icon" viewBox="0 0 24 24" fill="none">
-                      <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </>
-                )}
-              </button>
-            </form>
+                  {error && <span className="error-message">{error}</span>}
+                </div>
+
+                <button 
+                  type="submit" 
+                  className={`submit-button ${isLoading ? 'loading' : ''}`}
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <div className="loading-spinner">
+                      <div className="spinner"></div>
+                      <span>Submitting...</span>
+                    </div>
+                  ) : (
+                    <>
+                      <span>Join the waitlist</span>
+                      <svg className="arrow-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
                 
             <div className="footer-section">
               <a className="privacy-text" href="/privacy">Privacy Policy</a>
