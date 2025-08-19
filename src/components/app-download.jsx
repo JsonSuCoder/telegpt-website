@@ -132,8 +132,11 @@ const AppDownload = () => {
                             <span className="ai-text">AI.</span>
                         </h1>
                         <h1 className="sub-heading">Achieve More.</h1>
-                        <p className="description">
+                        {/* <p className="description">
                             Supercharge your Telegram chats with AI-driven features for work and everyday life.
+                        </p> */}
+                        <p className="description">
+                            TeleGPT is a Telegram-based AI assistant designed to supercharge your messaging experience. Built on the Telegram API, TeleGPT offers advanced features like real-time message summarization, smart replies, AI-powered translation, and intelligent meeting scheduling — all seamlessly integrated into your chats. It's a powerful upgrade for both personal and professional communication.
                         </p>
                     </div>
                     {/* download */}
