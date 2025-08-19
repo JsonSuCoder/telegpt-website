@@ -179,13 +179,7 @@ const SEOTools = () => {
       .hero-section {
         min-height: 60vh;
       }
-      
-      /* 优化焦点样式 */
-      :focus-visible {
-        outline: 2px solid #3b82f6;
-        outline-offset: 2px;
-      }
-      
+        
       /* 滚动行为优化 */
       html {
         scroll-behavior: smooth;
