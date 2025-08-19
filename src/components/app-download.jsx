@@ -139,15 +139,15 @@ const AppDownload = () => {
                     {/* download */}
                     <div className='download-buttons-wrapper'>
                         <div className='download-button-container desktop-only'>
-                            <button className='download-button' onClick={handleDownloadWin}>
+                            <button className='download-button' disabled  onClick={handleDownloadWin}>
                                 <img src={windowIcon} alt='Windows' className='button-icon' />
                                 <img src={downloadIcon} alt='Download' className='button-icon-hover' />
                                 <span className='button-text'>Windows</span>
                                 <span className='button-text-hover'>Download</span>
                             </button>
                         </div>
-                        <div className='download-button-container desktop-only'>
-                            <button className='download-button' onClick={handleDownloadMac}>
+                        <div className='download-button-container  desktop-only'>
+                            <button className='download-button' disabled onClick={handleDownloadMac}>
                                 <img src={appStoreIcon} alt='App Store' className='button-icon' />
                                 <img src={downloadIcon} alt='Download' className='button-icon-hover' />
                                 <span className='button-text'>MacOS</span>
@@ -155,7 +155,7 @@ const AppDownload = () => {
                             </button>
                         </div>
                         <div className='download-button-container desktop-only'>
-                            <button className='download-button' onClick={handleDownloadOS}>
+                            <button className='download-button' disabled onClick={handleDownloadOS}>
                                 <img src={macIcon} alt='iOS' className='button-icon' />
                                 <img src={downloadIcon} alt='Download' className='button-icon-hover' />
                                 <span className='button-text'>iOS</span>

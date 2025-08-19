@@ -201,6 +201,7 @@
   justify-content: center;
   transition: all 0.3s ease;
   overflow: hidden;
+  cursor: not-allowed;
   &.mobile-only{
     display: flex;
     flex-direction: row;
@@ -247,13 +248,13 @@
   transition: opacity 0.3s ease;
 }
 
-.download-button:not(.mobile-only):hover .button-icon {
-  opacity: 0;
-}
+// .download-button:not(.mobile-only):hover .button-icon {
+//   opacity: 0;
+// }
 
-.download-button:hover .button-icon-hover {
-  opacity: 1;
-}
+// .download-button:hover .button-icon-hover {
+//   opacity: 1;
+// }
 
 .button-text {
   font-family: Inter;
@@ -287,13 +288,13 @@
   transition: opacity 0.3s ease;
 }
 
-.download-button:hover .button-text {
-  opacity: 0;
-}
+// .download-button:hover .button-text {
+//   opacity: 0;
+// }
 
-.download-button:hover .button-text-hover {
-  opacity: 1;
-}
+// .download-button:hover .button-text-hover {
+//   opacity: 1;
+// }
 
 @keyframes gradientCycle {
   0% {

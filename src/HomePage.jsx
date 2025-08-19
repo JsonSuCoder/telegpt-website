@@ -11,12 +11,12 @@ import AppFaq from './components/app-faq';
 import Footer from './components/footer';
 import SEOHead from './components/SEOHead';
 import SEOTools from './components/SEOTools';
-import EmailCollection from './components/EmailCollection';
+// import EmailCollection from './components/EmailCollection';
 
 const HomePage = () => {
   return (
     <>
-      <EmailCollection  />
+      {/* <EmailCollection  /> */}
       {/* 原有的主页内容 */}
       <SEOHead page="home" structuredDataType="software" />
       <SEOTools />
