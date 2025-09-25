@@ -10,7 +10,7 @@ const AppFeature = () => {
     return (
         <div className="app-feature-container">
             <div className="feature-header">
-                <h2 className="feature-main-title">Why TeleGPT？</h2>
+                <h2 className="feature-main-title">Why TelyAI</h2>
                 <h3 className="feature-subtitle">It's Smart, Secure & Convenient!</h3>
             </div>
 
@@ -22,7 +22,7 @@ const AppFeature = () => {
                     </div>
                     <h4 className="card-title">Powered by Telegram</h4>
                     <p className="card-description">
-                        Telegpt is the best way to enjoy everything Telegram has to offer without any restrictions. It uses an open source Telegram API and supports updates from the official client, giving you full access while still on your favorite messaging app!
+                        TelyAI is the best way to enjoy everything Telegram has to offer without any restrictions. It uses an open source Telegram API and supports updates from the official client, giving you full access while still on your favorite messaging app!
                     </p>
                 </div>
                 {/* Private & Secure Card */}
@@ -32,14 +32,14 @@ const AppFeature = () => {
                     </div>
                     <h4 className="card-title">Private & Secure</h4>
                     <p className="card-description">
-                        The information you send via the Telegpt messenger is encrypted and stored on Telegram servers to ensure your safety. We do not collect any personal data, so there's no need for concern!
+                        The information you send via the TelyAI messenger is encrypted and stored on Telegram servers to ensure your safety. We do not collect any personal data, so there's no need for concern!
                     </p>
                 </div>
 
                 {/* AI-enabled IM Card */}
                 <div className="feature-card">
                     <div className="card-icon ai-icon">
-                        <img src={aiIcon} alt="telegpt" className="feature-icon" />
+                        <img src={aiIcon} alt="TelyAI" className="feature-icon" />
                     </div>
                     <h4 className="card-title">AI-enabled IM</h4>
                     <p className="card-description">

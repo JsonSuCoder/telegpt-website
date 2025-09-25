@@ -13,7 +13,7 @@ const PrivacyPolicy = () => {
         <div className="privacy-content">
           <div className="intro-section">
             <p>
-              This Privacy Policy is intended to explain how we, the TeleGPT Service (hereinafter referred to as "we" or "the Service") collect, use, process and protect your personal data when you use our Smart Chat Assistant Service. TeleGPT is your smart companion on Telegram, offering a range of powerful AI features including text generation, translation, grammar checking, content summary, meeting scheduling and voice calls.
+              This Privacy Policy is intended to explain how we, the TelyAI Service (hereinafter referred to as "we" or "the Service") collect, use, process and protect your personal data when you use our Smart Chat Assistant Service. TelyAI is your smart companion on Telegram, offering a range of powerful AI features including text generation, translation, grammar checking, content summary, meeting scheduling and voice calls.
             </p>
             <p>
               We know your importance to privacy. This policy details how we process your information and what rights you have with it.
@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
           <section className="policy-section">
             <h2>1. Introduction</h2>
             <p>
-              TeleGPT is committed to enhancing user interaction on Telegram with advanced artificial intelligence technology. As part of the Telegram ecosystem, this service runs through Telegram's API, meaning that some of your data will be processed in accordance with Telegram's own privacy policy. We recommend that you review Telegram's privacy policy to understand how its data is processed, including how it shares user data with relevant departments (such as IP addresses and phone numbers) according to legal obligations.
+              TelyAI is committed to enhancing user interaction on Telegram with advanced artificial intelligence technology. As part of the Telegram ecosystem, this service runs through Telegram's API, meaning that some of your data will be processed in accordance with Telegram's own privacy policy. We recommend that you review Telegram's privacy policy to understand how its data is processed, including how it shares user data with relevant departments (such as IP addresses and phone numbers) according to legal obligations.
             </p>
             <div className="policy-overview">
               <h3>This Privacy Policy covers:</h3>
@@ -43,11 +43,11 @@ const PrivacyPolicy = () => {
 
           <section className="policy-section">
             <h2>2. Information we collect</h2>
-            <p>To provide and improve TeleGPT services, we may collect the following types of information:</p>
+            <p>To provide and improve TelyAI services, we may collect the following types of information:</p>
             
             <div className="subsection">
               <h3>2.1 Information you provide directly</h3>
-              <p>When you use TeleGPT, you may provide us with:</p>
+              <p>When you use TelyAI, you may provide us with:</p>
               <ul>
                 <li><strong>Telegram User ID:</strong> This is the unique identifier we use to identify and serve you. We do not collect your Telegram phone number or contact list.</li>
                 <li><strong>AI function input:</strong> text messages you send to the robot, voice input (for voice call functions), and content that needs to be translated or summarized. These contents will be used as input for the processing of the AI model.</li>
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
 
             <div className="subsection">
               <h3>2.2 Automatically collected information</h3>
-              <p>When you use TeleGPT, we may automatically collect:</p>
+              <p>When you use TelyAI, we may automatically collect:</p>
               <ul>
                 <li><strong>Usage Data:</strong> Information about how you interact with AI features, including the features you use, the frequency of use, the timestamp of each interaction, and the AI response time.</li>
                 <li><strong>Device Information:</strong> We collect information from devices and browsers integrated with our services, including device types, hardware models, operating systems and versions, browser types and languages.</li>
@@ -122,7 +122,7 @@ const PrivacyPolicy = () => {
 
           <section className="policy-section">
             <h2>3. Google API Services Limited Usage Policy Compliance Statement</h2>
-            <p>TeleGPT's use of information received from Google APIs will comply with the Google API Services User Data Policy, including limited use requirements.</p>
+            <p>TelyAI's use of information received from Google APIs will comply with the Google API Services User Data Policy, including limited use requirements.</p>
             
             <div className="subsection">
               <h3>3.1 Limited use commitment</h3>
@@ -197,7 +197,7 @@ const PrivacyPolicy = () => {
 
           <section className="policy-section">
             <h2>5. How we share your information</h2>
-            <p>To provide the core functionality of TeleGPT, your information may be shared under the following circumstances:</p>
+            <p>To provide the core functionality of TelyAI, your information may be shared under the following circumstances:</p>
             
             <div className="subsection">
               <h3>5.1 with AI Model Provider</h3>
@@ -206,7 +206,7 @@ const PrivacyPolicy = () => {
 
             <div className="subsection">
               <h3>5.2 Using Telegram</h3>
-              <p>Because TeleGPT runs through Telegram's infrastructure, data such as your user ID and message content are processed by Telegram before they arrive at us and after they leave us. For more details, please refer to Telegram's Privacy Policy.</p>
+              <p>Because TelyAI runs through Telegram's infrastructure, data such as your user ID and message content are processed by Telegram before they arrive at us and after they leave us. For more details, please refer to Telegram's Privacy Policy.</p>
             </div>
 
             <div className="subsection">
@@ -226,7 +226,7 @@ const PrivacyPolicy = () => {
 
             <div className="subsection">
               <h3>5.6 Business Transfer</h3>
-              <p>If TeleGPT involves a merger, acquisition, or asset sale, your data may be transferred as part of the transaction. We will notify you 30 days in advance before your data is subject to other privacy policies.</p>
+              <p>If TelyAI involves a merger, acquisition, or asset sale, your data may be transferred as part of the transaction. We will notify you 30 days in advance before your data is subject to other privacy policies.</p>
             </div>
 
             <div className="subsection">
@@ -342,7 +342,7 @@ const PrivacyPolicy = () => {
               <h3>8.3 Methods of exercising rights</h3>
               <p>To exercise these rights:</p>
               <ul>
-                <li>Send an email to: Hi@telegpt.org</li>
+                <li>Send an email to: Hi@telyai.org</li>
                 <li>Explain the rights you want to exercise in the email</li>
                 <li>Provide necessary authentication information</li>
                 <li>We will respond to your request within 30 days</li>
@@ -360,7 +360,7 @@ const PrivacyPolicy = () => {
             
             <div className="subsection">
               <h3>9.1 Age restriction</h3>
-              <p>TeleGPT does not target or knowingly collect personal data from children under the age of 13. We require all users to be at least 13 years of age.</p>
+              <p>TelyAI does not target or knowingly collect personal data from children under the age of 13. We require all users to be at least 13 years of age.</p>
             </div>
 
             <div className="subsection">
@@ -386,7 +386,7 @@ const PrivacyPolicy = () => {
 
             <div className="subsection">
               <h3>9.4 Parental rights</h3>
-              <p>If you are a parent or guardian and believe that your child has provided us with personal data, please contact us immediately: Hi@telegpt.org</p>
+              <p>If you are a parent or guardian and believe that your child has provided us with personal data, please contact us immediately: Hi@telyai.org</p>
             </div>
           </section>
 
@@ -504,7 +504,7 @@ const PrivacyPolicy = () => {
               <h3>13.1 Privacy Issues</h3>
               <p>If you have any questions or suggestions about this Privacy Policy, please contact us at:</p>
               <div className="contact-info">
-                <p><strong>Email:</strong> Hi@telegpt.org</p>
+                <p><strong>Email:</strong> Hi@telyai.org</p>
                 <p><strong>Topic:</strong> Privacy Policy Consultation</p>
               </div>
             </div>
@@ -538,7 +538,7 @@ const PrivacyPolicy = () => {
           <div className="important-statement">
             <h3>Important Statement</h3>
             <p>
-              As part of the Telegram robot ecosystem, TeleGPT follows the basic principles of Telegram: We do not use your data to serve ads, we only store the data required by TeleGPT as a secure and feature-rich AI assistant service.
+              As part of the Telegram robot ecosystem, TelyAI follows the basic principles of Telegram: We do not use your data to serve ads, we only store the data required by TelyAI as a secure and feature-rich AI assistant service.
             </p>
           </div>
 

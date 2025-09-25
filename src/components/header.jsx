@@ -26,8 +26,8 @@ const Header = () => {
         <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
             <nav className="header-nav">
                 <div className="header-logo">
-                    <img src={aiIcon} alt="Telegpt" className="logo-image" />
-                    <span className="logo-text">TeleGPT</span>
+                    <img src={aiIcon} alt="TelyAI" className="logo-image" />
+                    <span className="logo-text">TelyAI</span>
                 </div>
                 {/* <div className="header-menu">
                     <a href="#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a>

@@ -67,8 +67,8 @@ const AppDownload = () => {
         
         // 下载Windows安装包
         const link = document.createElement('a');
-        link.href = '/package/TeleGPT-x64.exe';
-        link.download = 'TeleGPT-x64.exe';
+        link.href = '/package/TelyAI-x64.exe';
+        link.download = 'TelyAI-x64.exe';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -96,7 +96,7 @@ const AppDownload = () => {
         }
         
         // 根据芯片类型选择对应的安装包
-        const fileName = architecture === 'arm' ? 'TeleGPT-arm64.dmg' : 'TeleGPT-x64.dmg';
+        const fileName = architecture === 'arm' ? 'TelyAI-arm64.dmg' : 'TelyAI-x64.dmg';
         
         const link = document.createElement('a');
         link.href = `/package/${fileName}`;
@@ -114,7 +114,6 @@ const AppDownload = () => {
             return;
         }
         
-        // window.location.href = "https://apps.apple.com/us/app/telegpt/id6748808892?l=zh-Hans-CN";
         message.info("Coming soon...")
     }
 
@@ -136,7 +135,7 @@ const AppDownload = () => {
                             Supercharge your Telegram chats with AI-driven features for work and everyday life.
                         </p> */}
                         <p className="description">
-                            TeleGPT is a Telegram-based AI assistant designed to supercharge your messaging experience. Built on the Telegram API, TeleGPT offers advanced features like real-time message summarization, smart replies, AI-powered translation, and intelligent meeting scheduling — all seamlessly integrated into your chats. It's a powerful upgrade for both personal and professional communication.
+                            TelyAI is a Telegram-based AI assistant designed to supercharge your messaging experience. Built on the Telegram API, TelyAI offers advanced features like real-time message summarization, smart replies, AI-powered translation, and intelligent meeting scheduling — all seamlessly integrated into your chats. It's a powerful upgrade for both personal and professional communication.
                         </p>
                     </div>
                     {/* download */}

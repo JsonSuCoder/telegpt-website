@@ -10,10 +10,10 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# telegpt-website
+# telyai-website
 
 ## SEO优化完成总结
-我已经成功为TeleGPT网站实施了全面的SEO优化，包括以下几个方面：
+我已经成功为TelyAI网站实施了全面的SEO优化，包括以下几个方面：
 
 ### 🔍 核心SEO配置
 - 更新了 `index.html` - 添加了完整的meta标签集合，包括基础SEO标签、Open Graph、Twitter Cards、安全标签和性能优化标签

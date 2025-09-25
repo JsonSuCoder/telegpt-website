@@ -7,7 +7,7 @@ const LicenseAgreement = () => {
       <header>
         <div>
           <h1>End-User License Agreement</h1>
-          <p>TeleGPT Software License Terms</p>
+          <p>TelyAI Software License Terms</p>
         </div>
       </header>
       
@@ -20,7 +20,7 @@ const LicenseAgreement = () => {
             </div>
             
             <div>
-              <p>This End-User License Agreement (referred to as the "EULA") is a legally binding agreement between you, the Licensee, an individual customer or entity, and LINX COMMUNICATION INC. and the author of Telegpt, which may include associated media, printed materials, and online or electronic documentation. This Agreement is a legally binding contract that contains terms that limit your legal rights and Licensors' liability to you and shall govern all access to and use of this Software. You hereby agree, without limitation or alteration, to all the terms and conditions contained herein.</p>
+              <p>This End-User License Agreement (referred to as the "EULA") is a legally binding agreement between you, the Licensee, an individual customer or entity, and LINX COMMUNICATION INC. and the author of TelyAI, which may include associated media, printed materials, and online or electronic documentation. This Agreement is a legally binding contract that contains terms that limit your legal rights and Licensors' liability to you and shall govern all access to and use of this Software. You hereby agree, without limitation or alteration, to all the terms and conditions contained herein.</p>
             </div>
             
             <p>By installing, copying, or otherwise using the Licensed Product (Software), the Licensee agrees to be bound by the terms and conditions outlined in this EULA. However, if the Licensee does not agree to the terms and conditions outlined in this EULA, the said Licensee may not download, install, or use Software.</p>
@@ -33,7 +33,7 @@ const LicenseAgreement = () => {
             
             <p>"Licensor" shall refer to LINX COMMUNICATION INC., located at 300 Creek View Road, Suite 209, in Newark, County of New Castle.</p>
             
-            <p>"Software/Licensed product" shall mean Telegpt, the Licensed Product provided pursuant to this EULA.</p>
+            <p>"Software/Licensed product" shall mean TelyAI, the Licensed Product provided pursuant to this EULA.</p>
             
             <h2>Grant of License</h2>
             
@@ -105,7 +105,7 @@ const LicenseAgreement = () => {
             
             <p>If you have any questions about this EULA, please contact LINX COMMUNICATION INC. at:</p>
             
-            <p>Email: support@telegpt.ai</p>
+            <p>Email: Hi@telyai.org</p>
             <p>Address: 300 Creek View Road, Suite 209, Newark, DE 19711, United States</p>
             </div>
           </div>

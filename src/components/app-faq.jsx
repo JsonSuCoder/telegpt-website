@@ -8,9 +8,9 @@ const AppFaq = () => {
     const faqData = [
         {
             id: 1,
-            question: "What is TeleGPT?",
+            question: "What is TelyAI?",
             answer: {
-                title: "TeleGPT is an AI copilot integrated into instant messaging platforms. It helps you summarize group messages, translate conversations, identify key information, schedule meetings, and retrieve messages intelligently — making your chats smarter and more efficient.",
+                title: "TelyAI is an AI copilot integrated into instant messaging platforms. It helps you summarize group messages, translate conversations, identify key information, schedule meetings, and retrieve messages intelligently — making your chats smarter and more efficient.",
                 list: [
 
                 ]
@@ -18,7 +18,7 @@ const AppFaq = () => {
         },
         {
             id: 2,
-            question: "What are the main features of TeleGPT?",
+            question: "What are the main features of TelyAI?",
             answer: {
                 title: "",
                 list: [
@@ -35,9 +35,9 @@ const AppFaq = () => {
         },
         {
             id: 3,
-            question: " Is TeleGPT free to use?",
+            question: " Is TelyAI free to use?",
             answer: {
-                title: "TeleGPT offers a 7-day free trial with full access to all key features, including summarization, translation, alerts, multi-modal AI, and more. After the trial, you can continue using limited free features or upgrade to Pro/Team for advanced capabilities.",
+                title: "TelyAI offers a 7-day free trial with full access to all key features, including summarization, translation, alerts, multi-modal AI, and more. After the trial, you can continue using limited free features or upgrade to Pro/Team for advanced capabilities.",
                 list: []
             }
         },
@@ -53,7 +53,7 @@ const AppFaq = () => {
             id: 5,
             question: "Is my chat data secure?",
             answer: {
-                title: "Yes. TeleGPT does not store your chat data. All processing is done in real-time with strict privacy and encryption protocols. See our Privacy Policy for details.",
+                title: "Yes. TelyAI does not store your chat data. All processing is done in real-time with strict privacy and encryption protocols. See our Privacy Policy for details.",
                 list: []
             }
         },
@@ -73,7 +73,7 @@ const AppFaq = () => {
             id: 7,
             question: "How does multi-modal support work?",
             answer: {
-                title: "Once enabled, TeleGPT can analyze content from images, videos, links, and attachments shared in chat and summarize or extract key details. You can turn this feature on or off anytime.",
+                title: "Once enabled, TelyAI can analyze content from images, videos, links, and attachments shared in chat and summarize or extract key details. You can turn this feature on or off anytime.",
                 list: []
             }
         }

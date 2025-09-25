@@ -26,9 +26,9 @@ export default defineConfig({
         
         // 复制安装包文件
         try {
-          copyFileSync(resolve(packageSrcDir, 'TeleGPT-x64.exe'), resolve(packageDistDir, 'TeleGPT-x64.exe'));
-          copyFileSync(resolve(packageSrcDir, 'TeleGPT-arm64.dmg'), resolve(packageDistDir, 'TeleGPT-arm64.dmg'));
-          copyFileSync(resolve(packageSrcDir, 'TeleGPT-x64.dmg'), resolve(packageDistDir, 'TeleGPT-x64.dmg'));
+          copyFileSync(resolve(packageSrcDir, 'TelyAI-x64.exe'), resolve(packageDistDir, 'TelyAI-x64.exe'));
+          copyFileSync(resolve(packageSrcDir, 'TelyAI-arm64.dmg'), resolve(packageDistDir, 'TelyAI-arm64.dmg'));
+          copyFileSync(resolve(packageSrcDir, 'TelyAI-x64.dmg'), resolve(packageDistDir, 'TelyAI-x64.dmg'));
           console.log('Package files copied to dist successfully!');
         } catch (error) {
           console.error('Error copying package files:', error);

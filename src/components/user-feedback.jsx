@@ -27,7 +27,7 @@ const UserFeedback = () => {
             id: 3,
             name: "Vincent Hong",
             avatar: userAvatar4,
-            feedback: "Woke up to 400+ unread messages.Telegpt summarized the key alpha, extracted the contract address, and even translated the founder's rant."
+            feedback: "Woke up to 400+ unread messages.TelyAI summarized the key alpha, extracted the contract address, and even translated the founder's rant."
         },
         {
             id: 4,
@@ -52,7 +52,7 @@ const UserFeedback = () => {
     return (
         <div className="user-feedback-container">
             <div className="feedback-header">
-                <h2 className="feedback-title">They all chat smarter with TeleGPT.</h2>
+                <h2 className="feedback-title">They all chat smarter with TelyAI.</h2>
             </div>
             
             <div className="feedback-grid">

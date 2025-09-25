@@ -51,19 +51,19 @@ const SEOTools = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://telegpt.org/"
+            "item": "https://telyai.org/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Features",
-            "item": "https://telegpt.org/features"
+            "item": "https://telyai.org/features"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Pricing",
-            "item": "https://telegpt.org/pricing"
+            "item": "https://telyai.org/pricing"
           }
         ]
       });
@@ -85,9 +85,9 @@ const SEOTools = () => {
       orgScript.textContent = JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "TeleGPT",
-        "url": "https://telegpt.org",
-        "logo": "https://telegpt.org/images/logo.png",
+        "name": "TelyAI",
+        "url": "https://telyai.org",
+        "logo": "https://telyai.org/images/logo.png",
         "description": "AI-powered Telegram assistant for chat summaries, grammar checking, translation, and productivity features.",
         "foundingDate": "2024",
         "sameAs": [
@@ -98,7 +98,7 @@ const SEOTools = () => {
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "email": "support@telegpt.org",
+          "email": "Hi@telyai.org",
           "availableLanguage": ["English", "Chinese", "Spanish", "French"]
         }
       });

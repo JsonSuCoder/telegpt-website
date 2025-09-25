@@ -14,8 +14,8 @@ const Footer = () => {
                     {/* Logo 区域 */}
                     <div className="footer-section logo-section">
                         <div className="logo-wrapper">
-                            <img src={telegptLogo} alt="TeleGPT Logo" className="footer-logo" />
-                            <span className="logo-text">TeleGPT</span>
+                            <img src={telegptLogo} alt="TelyAI Logo" className="footer-logo" />
+                            <span className="logo-text">TelyAI</span>
                         </div>
                     </div>
                     <div className='footer-section right-section'>
@@ -33,7 +33,7 @@ const Footer = () => {
                         <div className="footer-section contacts-section">
                             <h3 className="section-title">Contacts</h3>
                             <ul className="section-links">
-                                <li><a href="mailto:Hi@telegpt.org">Hi@telegpt.org</a></li>
+                                <li><a href="mailto:Hi@telyai.org">Hi@telyai.org</a></li>
                             </ul>
                         </div>
                     </div>
