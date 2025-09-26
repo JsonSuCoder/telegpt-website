@@ -11,28 +11,11 @@ import AppFaq from './components/app-faq';
 import Footer from './components/footer';
 import SEOHead from './components/SEOHead';
 import SEOTools from './components/SEOTools';
-import EmailCollection from './components/EmailCollection';
-import { checkEmailCollected } from './utils/emailCollection';
 
 const HomePage = () => {
-  const [showEmailCollection, setShowEmailCollection] = useState(false);
-
-  useEffect(() => {
-    // 检查是否已经收集过邮箱
-    const hasCollected = checkEmailCollected();
-    setShowEmailCollection(!hasCollected);
-  }, []);
-
-  const handleEmailSubmitted = () => {
-    // 邮箱提交成功后隐藏组件
-    setTimeout(() => {
-      setShowEmailCollection(false);
-    }, 3000); // 3秒后隐藏，与组件内部的自动隐藏时间一致
-  };
 
   return (
     <>
-      {showEmailCollection && <EmailCollection onEmailSubmitted={handleEmailSubmitted} />}
       {/* 原有的主页内容 */}
       <SEOHead page="home" structuredDataType="software" />
       <SEOTools />

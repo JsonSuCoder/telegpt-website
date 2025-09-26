@@ -7,48 +7,21 @@ import appStoreIcon from '../assets/app-download/appstore.png';
 import macIcon from '../assets/app-download/mac.png';
 import appScreenImg from '../assets/app-download/app-main-screen.png';
 import { message } from '../utils/message';
-import { getDeviceId } from '../utils/emailCollection';
 
- async function getMacArchUserAgentData() {
-        if (navigator.userAgentData) {
-          // userAgentData.getHighEntropyValues 可请求额外信息
-          const highEntropy =
+async function getMacArchUserAgentData() {
+    if (navigator.userAgentData) {
+        // userAgentData.getHighEntropyValues 可请求额外信息
+        const highEntropy =
             await navigator.userAgentData.getHighEntropyValues([
-              "architecture",
+                "architecture",
             ]);
-          return highEntropy.architecture; // "arm" 或 "x86"
-        }
-        return null;
-      }
+        return highEntropy.architecture; // "arm" 或 "x86"
+    }
+    return null;
+}
 
 const AppDownload = () => {
     const [isVisible, setIsVisible] = useState(false);
-    // 邮箱白名单
-    const emailWhiteList = [];
-
-    // 检查本地收集的邮箱是否在白名单内
-    const checkEmailInWhitelist = () => {
-        try {
-            const deviceId = getDeviceId();
-            const collectedEmail = localStorage.getItem(`collected_email_${deviceId}`);
-            
-            if (!collectedEmail) {
-                message.error('Please submit your email address first');
-                return false;
-            }
-            
-            if (!emailWhiteList.includes(collectedEmail)) {
-                message.error('Your email address is not on the download whitelist. Please contact the administrator');
-                return false;
-            }
-            
-            return true;
-        } catch (error) {
-            console.error('检查邮箱白名单失败:', error);
-            message.error('Verification failed. Please try again later');
-            return false;
-        }
-    };
 
     useEffect(() => {
         // 组件挂载后触发动画
@@ -59,12 +32,7 @@ const AppDownload = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const handleDownloadWin = ()=>{
-        // 检查邮箱白名单
-        if (!checkEmailInWhitelist()) {
-            return;
-        }
-        
+    const handleDownloadWin = () => {
         // 下载Windows安装包
         const link = document.createElement('a');
         link.href = '/package/TelyAI-x64.exe';
@@ -72,19 +40,14 @@ const AppDownload = () => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
+
         message.success('Start downloading the Windows version');
     }
-    
-    const handleDownloadMac = async ()=>{
-        // 检查邮箱白名单
-        if (!checkEmailInWhitelist()) {
-            return;
-        }
-        
+
+    const handleDownloadMac = async () => {
         // 检测Mac芯片类型
         let architecture = await getMacArchUserAgentData();
-        
+
         // 如果无法检测到架构，尝试通过navigator.platform判断
         if (!architecture) {
             const platform = navigator.platform.toLowerCase();
@@ -94,26 +57,21 @@ const AppDownload = () => {
                 architecture = 'x86';
             }
         }
-        
+
         // 根据芯片类型选择对应的安装包
         const fileName = architecture === 'arm' ? 'TelyAI-arm64.dmg' : 'TelyAI-x64.dmg';
-        
+
         const link = document.createElement('a');
         link.href = `/package/${fileName}`;
         link.download = fileName;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        
+
         message.success(`Start downloading the MacOS version (${architecture})`);
     }
 
-    const handleDownloadOS = async ()=>{
-        // 检查邮箱白名单
-        if (!checkEmailInWhitelist()) {
-            return;
-        }
-        
+    const handleDownloadOS = async () => {
         message.info("Coming soon...")
     }
 
@@ -141,7 +99,7 @@ const AppDownload = () => {
                     {/* download */}
                     <div className='download-buttons-wrapper'>
                         <div className='download-button-container desktop-only'>
-                            <button className='download-button' disabled  onClick={handleDownloadWin}>
+                            <button className='download-button' onClick={handleDownloadWin}>
                                 <img src={windowIcon} alt='Windows' className='button-icon' />
                                 <img src={downloadIcon} alt='Download' className='button-icon-hover' />
                                 <span className='button-text'>Windows</span>
@@ -149,7 +107,7 @@ const AppDownload = () => {
                             </button>
                         </div>
                         <div className='download-button-container  desktop-only'>
-                            <button className='download-button' disabled onClick={handleDownloadMac}>
+                            <button className='download-button' onClick={handleDownloadMac}>
                                 <img src={appStoreIcon} alt='App Store' className='button-icon' />
                                 <img src={downloadIcon} alt='Download' className='button-icon-hover' />
                                 <span className='button-text'>MacOS</span>
@@ -157,7 +115,7 @@ const AppDownload = () => {
                             </button>
                         </div>
                         <div className='download-button-container desktop-only'>
-                            <button className='download-button' disabled onClick={handleDownloadOS}>
+                            <button className='download-button' onClick={handleDownloadOS}>
                                 <img src={macIcon} alt='iOS' className='button-icon' />
                                 <img src={downloadIcon} alt='Download' className='button-icon-hover' />
                                 <span className='button-text'>iOS</span>
