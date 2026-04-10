@@ -24,10 +24,10 @@ const Header = () => {
                     <span className="logo-text">TelyAI</span>
                 </div>
                 <div className="header-menu">
-                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">首页</NavLink>
-                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/use-case">用例</NavLink>
-                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/pricing">定价</NavLink>
-                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/skills">技能</NavLink>
+                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">Home</NavLink>
+                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/use-case">Use Cases</NavLink>
+                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/pricing">Pricing</NavLink>
+                    <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/skills">Skills</NavLink>
                 </div>
             </nav>
         </header>
