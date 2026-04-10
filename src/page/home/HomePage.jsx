@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
-
 import './home-page.scss';
-import Header from './components/header';
-import AppDownload from './components/app-download';
-import AppFunction from './components/app-function';
-// import ChatSummary from './components/chat-summary';
-import UserFeedback from './components/user-feedback';
-import AppFeature from './components/app-feature';
-import AppFaq from './components/app-faq';
-import Footer from './components/footer';
-import SEOHead from './components/SEOHead';
-import SEOTools from './components/SEOTools';
+import AppDownload from '../../components/app-download';
+import AppFunction from '../../components/app-function';
+// import ChatSummary from '../../components/chat-summary';
+import UserFeedback from '../../components/user-feedback';
+import AppFeature from '../../components/app-feature';
+import AppFaq from '../../components/app-faq';
+import Footer from '../../components/footer';
+import SEOHead from '../../components/SEOHead';
+import SEOTools from '../../components/SEOTools';
 
 const HomePage = () => {
 
@@ -21,7 +18,6 @@ const HomePage = () => {
       <SEOTools />
 
       <div className="home-page">
-        <Header />
         <main className="main-content">
           <section id="home" aria-labelledby="hero-heading">
             <AppDownload />

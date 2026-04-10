@@ -1,0 +1,210 @@
+
+.skill-container {
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.skill-page {
+  padding: 100px 24px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  .header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    h1 {
+      font-size: 56px;
+      font-weight: 800;
+      color: #111;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 20px;
+      color: #666;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  section {
+    margin-bottom: 80px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &::before {
+        content: '';
+        width: 4px;
+        height: 32px;
+        background: #007aff;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .install-section {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+
+    .install-step {
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 12px;
+      }
+
+      .code-block {
+        background: #1e1e1e;
+        color: #d4d4d4;
+        padding: 20px;
+        border-radius: 12px;
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-x: auto;
+        position: relative;
+        border: 1px solid #333;
+
+        code {
+          white-space: pre-wrap;
+          word-break: break-all;
+        }
+
+        &::before {
+          content: 'Terminal';
+          position: absolute;
+          top: 0;
+          right: 20px;
+          font-size: 10px;
+          text-transform: uppercase;
+          color: #666;
+          padding: 4px 0;
+        }
+      }
+    }
+  }
+
+  .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 32px;
+  }
+
+  .skill-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 24px;
+    padding: 32px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+      transform: translateY(-8px);
+      border-color: #007aff33;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+
+      .icon-wrapper {
+        width: 48px;
+        height: 48px;
+        background: #f8f8f8;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #007aff;
+        transition: all 0.3s ease;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #111;
+        margin: 0;
+      }
+    }
+
+    &:hover .icon-wrapper {
+      background: #007aff;
+      color: #fff;
+    }
+
+    .description {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .usage-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .command-preview {
+      background: #f5f5f7;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #444;
+      border: 1px solid #eee;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-page {
+    padding: 60px 20px 80px;
+
+    .header {
+      margin-bottom: 48px;
+      h1 { font-size: 36px; }
+      p { font-size: 17px; }
+    }
+
+    .install-section {
+      padding: 24px;
+    }
+
+    .skill-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
